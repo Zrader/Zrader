@@ -3,8 +3,11 @@
 Skills převzaté z oficiálního repozitáře [anthropics/skills](https://github.com/anthropics/skills)
 (commit `e4bb5d960d87126ff3b3a8af1a104b7db67560ba`).
 
-Claude Code načítá skills ze složky `.claude/skills/<název>/SKILL.md` automaticky –
-stačí v tomto repozitáři spustit Claude Code a skill se použije sám, když se hodí,
+Skills jsou uložené zde ve složce `_AI Skills/`. Claude Code hledá skills ve složce
+`.claude/skills/`, proto je `.claude/skills` odkaz (symlink) na `_AI Skills` –
+**tento odkaz nemazat**, jinak se skills přestanou načítat.
+
+Stačí v tomto repozitáři spustit Claude Code a skill se použije sám, když se hodí,
 nebo ho zavoláš ručně přes `/<název>` (např. `/pdf`, `/xlsx`, `/skill-creator`).
 
 | Skill | K čemu slouží |
@@ -35,5 +38,5 @@ Aktualizace na nejnovější verzi:
 
 ```bash
 git clone --depth 1 https://github.com/anthropics/skills.git /tmp/anthropic-skills
-cp -r /tmp/anthropic-skills/skills/* .claude/skills/
+cp -r /tmp/anthropic-skills/skills/* "_AI Skills/"
 ```
